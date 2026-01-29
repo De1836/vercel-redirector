@@ -49,11 +49,11 @@
     </div>
 
     <script>
-        // Get URL parameters
+        // customization
         const urlParams = new URLSearchParams(window.location.search);
-        let redirectUrl = urlParams.get('to') || 'https://example.com';
-        let siteName = urlParams.get('name') || 'Example Site';
-        let seconds = 5;
+        let redirectUrl = urlParams.get('to') || 'https://wiki.archlinux.org/title/Installation_guide';
+        let siteName = urlParams.get('name') || 'Arch Linux Installation Guide';
+        let seconds = 2;
 
         // Ensure the URL has http:// or https://
         if (!redirectUrl.startsWith('http')) {
