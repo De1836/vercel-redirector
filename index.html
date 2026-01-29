@@ -55,6 +55,8 @@
         let siteName = urlParams.get('name') || 'Arch Linux Installation Guide';
         let seconds = 2;
 
+        document.getElementById('countdown').textContent = seconds;
+
         // Ensure the URL has http:// or https://
         if (!redirectUrl.startsWith('http')) {
             redirectUrl = 'https://' + redirectUrl;
