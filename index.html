@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="5; url={{REDIRECT_URL}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #252525;
+            color: #ececec;
+            max-width: 600px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        a {
+            color: #187cbe;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #23a7ff;
+        }
+        .redirect-info {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+    <div class="redirect-info">
+        <p>You will be redirected to: <a href="{{REDIRECT_URL}}" id="siteLink">{{SITE_NAME}}</a></p>
+        <p>Redirecting in <span id="countdown">5</span> seconds</p>
+    </div>
+    
+    <script>
+        const redirectUrl = '{{REDIRECT_URL}}';
+        const siteName = '{{SITE_NAME}}';
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+        const siteLink = document.getElementById('siteLink');
+
+        // Update the meta refresh URL
+        document.querySelector('meta[http-equiv="refresh"]').content = `${seconds}; url=${redirectUrl}`;
+        
+        const countdown = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.location.href = redirectUrl;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

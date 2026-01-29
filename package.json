@@ -1,0 +1,16 @@
+{
+  "name": "redirect-page",
+  "version": "1.0.0",
+  "description": "A simple redirect page for Vercel",
+  "main": "api/redirect.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@vercel/node": "^3.0.0"
+  },
+  "devDependencies": {
+    "vercel": "^28.0.0"
+  }
+}
